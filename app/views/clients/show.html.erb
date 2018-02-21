@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+</br>
+<div class="container">
+  <div class="row">
+    <h1>Affichage Client</h1>
+  </div>
+</br>
+<p>
+  <strong style="color: rgb(47, 2, 247);">Prénom:</strong>
+  <%= @client.Prenom %>
+</p>
+<p>
+  <strong style="color: rgb(47, 2, 247);">Nom:</strong>
+  <%= @client.Nom %>
+</p>
+<p>
+  <strong style="color: rgb(47, 2, 247);">Date de Naissance:</strong>
+  <%= @client.DateNaissance %>
+</p>
+<p>
+  <strong style="color: rgb(47, 2, 247);">Numéro d'Assurance Social:</strong>
+  <%= @client.nas %>
+</p>
+<p>
+  <strong style="color: rgb(47, 2, 247);">Adresse:</strong>
+  <%= @client.Adress.Ville %>
+</p>
+<p>
+  <strong style="color: rgb(47, 2, 247);">Nombre d'Enfants:</strong>
+  <%= @client.NombresEnfants %>
+</p>
+<p>
+  <strong style="color: rgb(47, 2, 247);">Compte Taxes Propriétaire:</strong>
+  <%= @client.CompteTaxesProprietaire %>
+</p>
+</br>
+<%= link_to 'Editer', edit_client_path(@client), class: "btn btn-info";%> |
+<%= link_to 'Retour', clients_path, class: "btn btn-info";%>
+</div>

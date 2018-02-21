@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Secteur: MyString
+  Niveau: MyString
+  DateDebut: 2018-02-20
+  DateFin: 2018-02-20
+
+two:
+  Secteur: MyString
+  Niveau: MyString
+  DateDebut: 2018-02-20
+  DateFin: 2018-02-20

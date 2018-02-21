@@ -1,0 +1,63 @@
+
+<%= simple_form_for(@client) do |f| %>
+  <%= f.error_notification %>
+
+
+<div class="container">
+<div class="col-md-6">
+  <h2>Informations Personnelles</h2>
+</div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-inputs">
+        <%= f.input :Prenom , placeholder: "Prénom", label: false%>
+        <%= f.input :Nom , placeholder: "Nom", label: false%>
+        <strong>Date de Naissance</strong>
+        <div style="display: inline">
+        <%= f.input :DateNaissance , as: :date, html5: true , label: false%>
+        </div>
+        <%= f.input :nas , placeholder: "Numéro D'assurance Social", label: false%>
+        <%= f.input :NombresEnfants , placeholder: "Nombre d'Enfant", label: false%>
+        <%= f.input :CompteTaxesProprietaire , placeholder: "Compte de Taxes Propriétaire", label: false %>
+      </div>
+    </div>
+  </div>
+
+<div class="col-md-6">
+  <h2>Adresse</h2>
+</div>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.simple_fields_for :Adress do |ad| %>
+      <%= render 'address', f: ad %>
+      <% end %>
+    
+  </div>
+
+
+  <div class="row">
+  <h2 class="col-md-12" >Etudes<div class="float-right" style="padding-bottom: 5px"><%= link_to_add_row('Ajouter des études', f, :Etude, class: 'btn btn-primary', target: '.study') %></div></h2>
+
+    <table class='table'>
+      <thead>
+      <tr>
+        <th>Secteur</th>
+        <th>Niveau</th>
+        <th>Date début</th>
+        <th>Date completion</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody class='study'>
+      <%= f.simple_fields_for :Etude do |builder| %>
+        <%= render 'Etude', f: builder %>
+      <% end %>
+      </tbody>
+    </table>
+
+  <div class="form-actions">
+    <%= f.submit "Créer le client", class: "btn btn-primary"%>
+  </div>
+  </div>
+  </div>
+<% end %>
